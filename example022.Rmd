@@ -4,22 +4,53 @@ output: html_document
 ---
 
 ```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
+knitr::opts_chunk$set(echo = F, warning = F)
 ```
 
 ```{r}
-library(leaflet)
-
-EAIcon <- makeIcon(
-  iconUrl = "http://pxl-ea-ict.be/trinity/images/2.png",
-  iconWidth = 160, iconHeight = 100,
-  iconAnchorX = 22, iconAnchorY = 94
-)
-
-
-EA_map <- leaflet() %>% 
-  addTiles() %>%
-  addMarkers(lng=5.384984, lat=50.927781, icon = EAIcon, popup='<a href="https://www.facebook.com/pbaeaict/">PBA EA-ICT!</a>')
-EA_map
+ library(leaflet)
+ 
+ EAIcon <- makeIcon(
+   iconUrl = "http://pxl-ea-ict.be/trinity/images/2.png",
+   iconWidth = 160, iconHeight = 100,
+   iconAnchorX = 22, iconAnchorY = 94
+ )
+ 
+ ITcon <- makeIcon(
+   iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_it.png",
+   iconWidth = 160, iconHeight = 100,
+   iconAnchorX = 22, iconAnchorY = 94
+ )
+ 
+ EDUcon <- makeIcon(
+   iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_education.png",
+   iconWidth = 160, iconHeight = 100,
+   iconAnchorX = 22, iconAnchorY = 94
+ )
+ 
+ HCcon <- makeIcon(
+   iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_healthcare.png",
+   iconWidth = 160, iconHeight = 100,
+   iconAnchorX = 22, iconAnchorY = 94
+ )
+ 
+ MADcon <- makeIcon(
+   iconUrl = "https://www.pxl.be/Assets/website/pxl_algemeen/afbeeldingen/grotere_versie/1314_logo_pxl_mad.png",
+   iconWidth = 160, iconHeight = 100,
+   iconAnchorX = 22, iconAnchorY = 94
+ )
+ 
+ EA_map <- leaflet() %>% 
+   addTiles() %>%
+   addMarkers(lng=5.384984, lat=50.927781, icon = EAIcon, popup='<a href="https://www.facebook.com/pbaeaict/"PBA EA-ICT!</a')%>% 
+   addTiles() %>%
+   addMarkers(lng=,5.3485071, lat=50.9382336, icon = ITcon)%>% 
+   addTiles() %>%
+   addMarkers(lng=5.3439777, lat=50.9352668, icon = EDUcon)%>% 
+   addTiles() %>%
+   addMarkers(lng=5.3426945, lat=50.9276214, icon = HCcon)%>% 
+   addTiles() %>%
+   addMarkers(lng=5.3511179, lat=50.937039, icon = MADcon)
+ EA_map
 ```
 
